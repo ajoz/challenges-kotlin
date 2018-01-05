@@ -9,6 +9,10 @@ import io.github.ajoz.strings.head
 import io.github.ajoz.strings.tail
 
 /**
+ * Day 2: Bathroom Security
+ *
+ * -------------------- Part 1 -----------------------
+ *
  * You arrive at Easter Bunny Headquarters under cover of darkness. However, you left in such a rush that you forgot to
  * use the bathroom! Fancy office buildings like this one usually have keypad locks on their bathrooms, so you search
  * the front desk for the code.
@@ -116,6 +120,8 @@ fun getPart1BathroomAccessCode(instructions: String): Int {
 }
 
 /**
+ * -------------------- Part 2 -----------------------
+ *
  * You finally arrive at the bathroom (it's a several minute walk from the lobby so visitors can behold the many fancy
  * conference rooms and water coolers on this floor) and go to punch in the code. Much to your bladder's dismay, the
  * keypad is not at all like you imagined it. Instead, you are confronted after the result of hundreds of man-hours of

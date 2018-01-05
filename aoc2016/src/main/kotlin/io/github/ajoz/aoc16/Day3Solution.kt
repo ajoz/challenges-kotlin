@@ -3,6 +3,10 @@ package io.github.ajoz.aoc16
 import java.io.File
 
 /**
+ * Day 3: Squares With Three Sides
+ *
+ * -------------------- Part 1 -----------------------
+ *
  * Now that you can think clearly, you move deeper into the labyrinth of hallways and office furniture that makes up
  * this part of Easter Bunny HQ. This must be a graphic design department; the walls are covered in specifications for
  * triangles.
@@ -33,22 +37,18 @@ fun toSpecification(list: List<String>): Specification? = when (list.size) {
     else -> null
 }
 
-val input = File("src/main/resources/day3/puzzle-input")
-
-fun main(args: Array<String>) {
-    val count = input
-            .readLines()
-            .map {
-                it.split(delimiters = " ")
-                        .filter(String::isNotBlank)
-            }
-            .map(::toSpecification)
-            .filter(Specification?::isTriangle)
-            .count()
-    println(count)
-}
+fun getPart1ValidTrianglesCount(rows: List<String>) = rows
+        .map {
+            it.split(delimiters = " ")
+                    .filter(String::isNotBlank)
+        }
+        .map(::toSpecification)
+        .filter(Specification?::isTriangle)
+        .count()
 
 /**
+ * -------------------- Part 2 -----------------------
+ *
  * Now that you've helpfully marked up their design documents, it occurs to you that triangles are specified in groups
  * of three vertically. Each set of three numbers in a column specifies a triangle. Rows are unrelated.
  *
@@ -66,3 +66,19 @@ fun main(args: Array<String>) {
  *
  * https://adventofcode.com/2016/day/3
  */
+
+//fun getPart2ValidTrianglesCount(rows: List<String>): Boolean {
+//
+//
+//}
+
+val input = File("src/main/resources/day3/puzzle-input")
+
+fun main(args: Array<String>) {
+    println(getPart1ValidTrianglesCount(input.readLines()))
+
+    val list = listOf(1, 2, 3)
+    val seq = generateSequence(1) { it + 1 }
+
+}
+

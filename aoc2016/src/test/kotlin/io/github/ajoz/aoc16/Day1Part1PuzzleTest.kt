@@ -1,9 +1,9 @@
-package io.github.ajoz.day1.solution
+package io.github.ajoz.aoc16
 
 import io.kotlintest.matchers.shouldBe
 import io.kotlintest.specs.WordSpec
 
-class Day1Part1SolutionTest : WordSpec() {
+class Day1Part1PuzzleTest : WordSpec() {
     init {
         "The shortest path to Bunny HQ" should {
             "be 0 for a short all RIGHT (R) round route from start to finish" {
@@ -65,4 +65,3 @@ class Day1Part1SolutionTest : WordSpec() {
         }
     }
 }
-

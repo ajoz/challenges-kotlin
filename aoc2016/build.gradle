@@ -1,4 +1,4 @@
-group 'io.github.ajoz'
+group 'io.github.ajoz.aoc2016'
 version '1.0-SNAPSHOT'
 
 buildscript {

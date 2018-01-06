@@ -67,18 +67,32 @@ fun getPart1ValidTrianglesCount(rows: List<String>) = rows
  * https://adventofcode.com/2016/day/3
  */
 
-//fun getPart2ValidTrianglesCount(rows: List<String>): Boolean {
-//
-//
-//}
+fun getPart2ValidTrianglesCount(data: String): Int {
+
+    // unfortunately functions are not curried by default in Kotlin :(
+    // I need to the possibility to partially apply the function
+    fun getColumn(columns: List<String>): (Int) -> List<String> = { position ->
+        columns.drop(position).windowed(1, 3).flatten()
+    }
+
+    fun getTriangleCount(columns: List<String>) =
+            columns
+                    .windowed(3, 3)
+                    .map { toSpecification(it) }
+                    .filter { it.isTriangle }
+                    .count()
+
+    val columns = data.split(delimiters = " ")
+            .map { it.trim() }
+            .filter(String::isNotBlank)
+
+    return listOf(0, 1, 2).map(getColumn(columns)).map { getTriangleCount(it) }.sum()
+}
 
 val input = File("src/main/resources/day3/puzzle-input")
 
 fun main(args: Array<String>) {
+    println(getPart2ValidTrianglesCount(input.readText()))
     println(getPart1ValidTrianglesCount(input.readLines()))
-
-    val list = listOf(1, 2, 3)
-    val seq = generateSequence(1) { it + 1 }
-
 }
 

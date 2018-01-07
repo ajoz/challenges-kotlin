@@ -19,7 +19,7 @@ import java.io.File
  * In a valid triangle, the sum of any two sides must be larger than the remaining side. For example, the "triangle"
  * given above is impossible, because 5 + 10 is not larger than 25.
  *
- * In your puzzle input, how many of the listed triangles are possible?
+ * In your puzzle inputDay3, how many of the listed triangles are possible?
  *
  * https://adventofcode.com/2016/day/3
  */
@@ -62,7 +62,7 @@ fun getPart1ValidTrianglesCount(rows: List<String>) = rows
  * 202 402 602
  * 203 403 603
  *
- * In your puzzle input, and instead reading by columns, how many of the listed triangles are possible?
+ * In your puzzle inputDay3, and instead reading by columns, how many of the listed triangles are possible?
  *
  * https://adventofcode.com/2016/day/3
  */
@@ -89,10 +89,10 @@ fun getPart2ValidTrianglesCount(data: String): Int {
     return listOf(0, 1, 2).map(getColumn(columns)).map { getTriangleCount(it) }.sum()
 }
 
-val input = File("src/main/resources/day3/puzzle-input")
+val inputDay3 = File("src/main/resources/day3-puzzle-inputDay3")
 
 fun main(args: Array<String>) {
-    println(getPart2ValidTrianglesCount(input.readText()))
-    println(getPart1ValidTrianglesCount(input.readLines()))
+    println(getPart2ValidTrianglesCount(inputDay3.readText()))
+    println(getPart1ValidTrianglesCount(inputDay3.readLines()))
 }
 

@@ -97,6 +97,8 @@ fun String.replace(position: Int,
     return list.joinToString("")
 }
 
+fun Char.parseToInt(): Int = this.toInt() - '0'.toInt()
+
 data class PwdChar(val position: Int, val char: Char)
 
 fun getPart2MD5HashPassword(doorID: String) =
@@ -105,11 +107,11 @@ fun getPart2MD5HashPassword(doorID: String) =
                 .map { it.toMD5() }
                 .filter { it.startsWith("00000", ignoreCase = true) }
                 .filter { it[5] in  '0' .. '7' }
-                .onEach { println(it) }
-                .map { PwdChar(it[5].toInt(), it[6]) }
+                .map { PwdChar(it[5].parseToInt(), it[6]) }
+                .distinctBy(PwdChar::position)
                 .take(8)
                 .onEach { println(it) }
-                .fold("01234567") {
+                .fold("--------") {
                     password, (position, char) -> password.replace(position, char)
                 }
 

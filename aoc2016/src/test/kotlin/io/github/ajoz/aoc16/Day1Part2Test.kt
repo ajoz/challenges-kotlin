@@ -4,7 +4,7 @@ import io.github.ajoz.aoc16.getShortestPathLengthToFirstRepeatedDestination
 import io.kotlintest.matchers.shouldBe
 import io.kotlintest.specs.WordSpec
 
-class Day1Part2PuzzleTest : WordSpec() {
+class Day1Part2Test : WordSpec() {
     init {
         "The shortest path to first repeated destination (real Bunny HQ)" should {
             "be 0 for a short all RIGHT (R) round route from start to finish" {

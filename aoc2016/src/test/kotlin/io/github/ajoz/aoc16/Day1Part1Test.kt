@@ -3,7 +3,7 @@ package io.github.ajoz.aoc16
 import io.kotlintest.matchers.shouldBe
 import io.kotlintest.specs.WordSpec
 
-class Day1Part1PuzzleTest : WordSpec() {
+class Day1Part1Test : WordSpec() {
     init {
         "The shortest path to Bunny HQ" should {
             "be 0 for a short all RIGHT (R) round route from start to finish" {
